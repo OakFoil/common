@@ -47,7 +47,7 @@ Widget Function(BuildContext, AsyncSnapshot<T>) asyncBuilder<T>(
     ? showData(snapshot.data as T)
     : snapshot.hasError
     ? HeadlineText(snapshot.error.toString())
-    : const CircularProgressIndicator.adaptive();
+    : const Center(child: CircularProgressIndicator.adaptive());
 
 class AsyncValueBuilder<T> extends StatelessWidget {
   final AsyncValue<T> asyncValue;
@@ -62,7 +62,7 @@ class AsyncValueBuilder<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) => asyncValue.when(
     data: showData,
-    error: (e, trace) => Text(e.toString()),
-    loading: () => const CircularProgressIndicator.adaptive(),
+    error: (e, trace) => HeadlineText(e.toString()),
+    loading: () => const Center(child: CircularProgressIndicator.adaptive()),
   );
 }
