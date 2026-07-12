@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:common/common.dart';
+import 'package:common_flutter/common.dart';
 import 'package:riverpod/riverpod.dart';
 
 class MkFutureBuilder<T> extends StatelessWidget {
